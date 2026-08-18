@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import {ConfigModule,ConfigService} from '@nestjs/config'
 import {JwtModule} from '@nestjs/jwt'
+import { PrismaModule } from './config/prisma/prisma.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import {JwtModule} from '@nestjs/jwt'
         },
       }),
     }),
+    PrismaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
